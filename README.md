@@ -19,6 +19,7 @@ $ pytest
 ```bash
 $ pip install RMT-Audio OR pdm add Remote
 $ python
->>> from RMT.Audio.remote import remote as rm
->>> rm() 
+>>> from rmt_audio.remote import remote
+>>> remote(1,2,3)
+'Not Yet, Wait a minute, sir!'
 ```
