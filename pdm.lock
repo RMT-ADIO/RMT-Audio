@@ -5,10 +5,59 @@
 groups = ["default"]
 strategy = ["inherit_metadata"]
 lock_version = "4.5.0"
-content_hash = "sha256:3f16ea14da923b4b6ceadcfc7030af4b84e53eb57aeffd4d41f1f932c12eb41c"
+content_hash = "sha256:38226082803bb0aa7961d597d802eb61919c07be6129ce6da33b36be7056d1e4"
 
 [[metadata.targets]]
 requires_python = ">=3.10"
+
+[[package]]
+name = "async-timeout"
+version = "4.0.3"
+requires_python = ">=3.7"
+summary = "Timeout context manager for asyncio programs"
+groups = ["default"]
+marker = "python_version < \"3.11\""
+dependencies = [
+    "typing-extensions>=3.6.5; python_version < \"3.8\"",
+]
+files = [
+    {file = "async-timeout-4.0.3.tar.gz", hash = "sha256:4640d96be84d82d02ed59ea2b7105a0f7b33abe8703703cd0ab0bf87c427522f"},
+    {file = "async_timeout-4.0.3-py3-none-any.whl", hash = "sha256:7405140ff1230c310e51dc27b3145b9092d659ce68ff733fb0cefe3ee42be028"},
+]
+
+[[package]]
+name = "bleak"
+version = "0.20.2"
+requires_python = ">=3.7,<4.0"
+summary = "Bluetooth Low Energy platform Agnostic Klient"
+groups = ["default"]
+dependencies = [
+    "async-timeout<5,>=3.0.0; python_version < \"3.11\"",
+    "bleak-winrt<2.0.0,>=1.2.0; platform_system == \"Windows\"",
+    "dbus-fast<2.0.0,>=1.83.0; platform_system == \"Linux\"",
+    "pyobjc-core<10.0.0,>=9.0.1; platform_system == \"Darwin\"",
+    "pyobjc-framework-CoreBluetooth<10.0.0,>=9.0.1; platform_system == \"Darwin\"",
+    "pyobjc-framework-libdispatch<10.0.0,>=9.0.1; platform_system == \"Darwin\"",
+    "typing-extensions<5.0.0,>=4.2.0; python_version < \"3.8\"",
+]
+files = [
+    {file = "bleak-0.20.2-py3-none-any.whl", hash = "sha256:ce3106b7258212d92bb77be06f9301774f51f5bbc9f7cd50976ad794e9514dba"},
+    {file = "bleak-0.20.2.tar.gz", hash = "sha256:6c92a47abe34e6dea8ffc5cea9457cbff6e1be966854839dbc25cddb36b79ee4"},
+]
+
+[[package]]
+name = "bleak-winrt"
+version = "1.2.0"
+summary = "Python WinRT bindings for Bleak"
+groups = ["default"]
+marker = "platform_system == \"Windows\""
+files = [
+    {file = "bleak-winrt-1.2.0.tar.gz", hash = "sha256:0577d070251b9354fc6c45ffac57e39341ebb08ead014b1bdbd43e211d2ce1d6"},
+    {file = "bleak_winrt-1.2.0-cp310-cp310-win32.whl", hash = "sha256:a2ae3054d6843ae0cfd3b94c83293a1dfd5804393977dd69bde91cb5099fc47c"},
+    {file = "bleak_winrt-1.2.0-cp310-cp310-win_amd64.whl", hash = "sha256:677df51dc825c6657b3ae94f00bd09b8ab88422b40d6a7bdbf7972a63bc44e9a"},
+    {file = "bleak_winrt-1.2.0-cp311-cp311-win32.whl", hash = "sha256:9449cdb942f22c9892bc1ada99e2ccce9bea8a8af1493e81fefb6de2cb3a7b80"},
+    {file = "bleak_winrt-1.2.0-cp311-cp311-win_amd64.whl", hash = "sha256:98c1b5a6a6c431ac7f76aa4285b752fe14a1c626bd8a1dfa56f66173ff120bee"},
+]
 
 [[package]]
 name = "colorama"
@@ -20,6 +69,32 @@ marker = "sys_platform == \"win32\""
 files = [
     {file = "colorama-0.4.6-py2.py3-none-any.whl", hash = "sha256:4f1d9991f5acc0ca119f9d443620b77f9d6b33703e51011c16baf57afb285fc6"},
     {file = "colorama-0.4.6.tar.gz", hash = "sha256:08695f5cb7ed6e0531a20572697297273c47b8cae5a63ffc6d6ed5c201be6e44"},
+]
+
+[[package]]
+name = "dbus-fast"
+version = "1.95.2"
+requires_python = ">=3.7,<4.0"
+summary = "A faster version of dbus-next"
+groups = ["default"]
+marker = "platform_system == \"Linux\""
+files = [
+    {file = "dbus_fast-1.95.2-cp310-cp310-manylinux_2_17_i686.manylinux_2_5_i686.manylinux1_i686.manylinux2014_i686.whl", hash = "sha256:69f19fb94ac714b917c51fcc329b51695f085f779841edd6e429170f1f073f47"},
+    {file = "dbus_fast-1.95.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:c71e84a7ce3b050745dfb2bcd32ade891ecf6f4b06d3baa4dfe30ad09720a0be"},
+    {file = "dbus_fast-1.95.2-cp310-cp310-manylinux_2_31_x86_64.whl", hash = "sha256:3ffcd1c999599da7806d7887d5ce1e9f0d814aa35af92daecab542c9b70794c1"},
+    {file = "dbus_fast-1.95.2-cp310-cp310-musllinux_1_1_i686.whl", hash = "sha256:85739b90e6f983494c3c7187d4daaa50f4f4369aa1e87e876066de97ca1bcd58"},
+    {file = "dbus_fast-1.95.2-cp310-cp310-musllinux_1_1_x86_64.whl", hash = "sha256:e2c107caefa186919169e07a852edea3d931dfb6112584fa2c6e5653d91c0d2d"},
+    {file = "dbus_fast-1.95.2-cp311-cp311-manylinux_2_17_i686.manylinux_2_5_i686.manylinux1_i686.manylinux2014_i686.whl", hash = "sha256:99902ca6c10368492fdf5a28321d86c7e92e50fd742f0163599602c442232d29"},
+    {file = "dbus_fast-1.95.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:c3241252a744b0960e7eb9dcad2892af2bc695b4f47636bab2f17f6012d914ce"},
+    {file = "dbus_fast-1.95.2-cp311-cp311-musllinux_1_1_i686.whl", hash = "sha256:f52ef5edef41a0ed29645d7c6e1ee89b5e8f5e5c1ba9901699dcec9cfaf8d961"},
+    {file = "dbus_fast-1.95.2-cp311-cp311-musllinux_1_1_x86_64.whl", hash = "sha256:9706e10a6c24d4c03d28b1631e3882009964d5207a86cae2b42466635d7546be"},
+    {file = "dbus_fast-1.95.2-cp312-cp312-manylinux_2_17_i686.manylinux_2_5_i686.manylinux1_i686.manylinux2014_i686.whl", hash = "sha256:3277944b418063ad051e8e49144151962691188b972f1fbca7af39fdef4f8a47"},
+    {file = "dbus_fast-1.95.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:cab158bcf86c4b2e03c2f3453738a61de83c82cbed11f23331ccc9a9aba6d5b1"},
+    {file = "dbus_fast-1.95.2-cp312-cp312-musllinux_1_1_i686.whl", hash = "sha256:17d743d13dbde0691adb98f1a6c87f0cf5617a4c9169b4820972dc8869095c6b"},
+    {file = "dbus_fast-1.95.2-cp312-cp312-musllinux_1_1_x86_64.whl", hash = "sha256:aefa695088405d313c703790ac503ad0b2ac1e4807393f1f02e410b6984aedd0"},
+    {file = "dbus_fast-1.95.2-pp310-pypy310_pp73-manylinux_2_17_i686.manylinux_2_5_i686.manylinux1_i686.manylinux2014_i686.whl", hash = "sha256:76fb9d11bd6ebe1f832350ec57ada352f096f24b5731e38bcbad86ab9b27190b"},
+    {file = "dbus_fast-1.95.2-pp310-pypy310_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:26045c50bbd8c1674814759332333799b073216b2b2cac9e1cfebf757c7f926d"},
+    {file = "dbus_fast-1.95.2.tar.gz", hash = "sha256:3dd64c5cd362ceead6cc02603b6b4cbda58b2cbb6ec816a2f21b1901dfc3cb61"},
 ]
 
 [[package]]
@@ -182,6 +257,72 @@ groups = ["default"]
 files = [
     {file = "pluggy-1.5.0-py3-none-any.whl", hash = "sha256:44e1ad92c8ca002de6377e165f3e0f1be63266ab4d554740532335b9d75ea669"},
     {file = "pluggy-1.5.0.tar.gz", hash = "sha256:2cffa88e94fdc978c4c574f15f9e59b7f4201d439195c3715ca9e2486f1d0cf1"},
+]
+
+[[package]]
+name = "pyobjc-core"
+version = "9.2"
+requires_python = ">=3.7"
+summary = "Python<->ObjC Interoperability Module"
+groups = ["default"]
+marker = "platform_system == \"Darwin\""
+files = [
+    {file = "pyobjc-core-9.2.tar.gz", hash = "sha256:d734b9291fec91ff4e3ae38b9c6839debf02b79c07314476e87da8e90b2c68c3"},
+    {file = "pyobjc_core-9.2-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:fa674a39949f5cde8e5c7bbcd24496446bfc67592b028aedbec7f81dc5fc4daa"},
+    {file = "pyobjc_core-9.2-cp311-cp311-macosx_10_9_universal2.whl", hash = "sha256:bbc8de304ee322a1ee530b4d2daca135a49b4a49aa3cedc6b2c26c43885f4842"},
+    {file = "pyobjc_core-9.2-cp312-cp312-macosx_10_9_universal2.whl", hash = "sha256:0fa950f092673883b8bd28bc18397415cabb457bf410920762109b411789ade9"},
+]
+
+[[package]]
+name = "pyobjc-framework-cocoa"
+version = "9.2"
+requires_python = ">=3.7"
+summary = "Wrappers for the Cocoa frameworks on macOS"
+groups = ["default"]
+marker = "platform_system == \"Darwin\""
+dependencies = [
+    "pyobjc-core>=9.2",
+]
+files = [
+    {file = "pyobjc-framework-Cocoa-9.2.tar.gz", hash = "sha256:efd78080872d8c8de6c2b97e0e4eac99d6203a5d1637aa135d071d464eb2db53"},
+    {file = "pyobjc_framework_Cocoa-9.2-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:9e02d8a7cc4eb7685377c50ba4f17345701acf4c05b1e7480d421bff9e2f62a4"},
+    {file = "pyobjc_framework_Cocoa-9.2-cp311-cp311-macosx_10_9_universal2.whl", hash = "sha256:3b1e6287b3149e4c6679cdbccd8e9ef6557a4e492a892e80a77df143f40026d2"},
+    {file = "pyobjc_framework_Cocoa-9.2-cp312-cp312-macosx_10_9_universal2.whl", hash = "sha256:312977ce2e3989073c6b324c69ba24283de206fe7acd6dbbbaf3e29238a22537"},
+]
+
+[[package]]
+name = "pyobjc-framework-corebluetooth"
+version = "9.2"
+requires_python = ">=3.7"
+summary = "Wrappers for the framework CoreBluetooth on macOS"
+groups = ["default"]
+marker = "platform_system == \"Darwin\""
+dependencies = [
+    "pyobjc-core>=9.2",
+    "pyobjc-framework-Cocoa>=9.2",
+]
+files = [
+    {file = "pyobjc-framework-CoreBluetooth-9.2.tar.gz", hash = "sha256:cb2481b1dfe211ae9ce55f36537dc8155dbf0dc8ff26e0bc2e13f7afb0a291d1"},
+    {file = "pyobjc_framework_CoreBluetooth-9.2-cp36-abi3-macosx_10_9_universal2.whl", hash = "sha256:53d888742119d0f0c725d0b0c2389f68e8f21f0cba6d6aec288c53260a0196b6"},
+    {file = "pyobjc_framework_CoreBluetooth-9.2-cp36-abi3-macosx_10_9_x86_64.whl", hash = "sha256:179532882126526e38fe716a50fb0ee8f440e0b838d290252c515e622b5d0e49"},
+    {file = "pyobjc_framework_CoreBluetooth-9.2-cp36-abi3-macosx_11_0_universal2.whl", hash = "sha256:256a5031ea9d8a7406541fa1b0dfac549b1de93deae8284605f9355b13fb58be"},
+]
+
+[[package]]
+name = "pyobjc-framework-libdispatch"
+version = "9.2"
+requires_python = ">=3.7"
+summary = "Wrappers for libdispatch on macOS"
+groups = ["default"]
+marker = "platform_system == \"Darwin\""
+dependencies = [
+    "pyobjc-core>=9.2",
+]
+files = [
+    {file = "pyobjc-framework-libdispatch-9.2.tar.gz", hash = "sha256:542e7f7c2b041939db5ed6f3119c1d67d73ec14a996278b92485f8513039c168"},
+    {file = "pyobjc_framework_libdispatch-9.2-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:88d4091d4bcb5702783d6e86b4107db973425a17d1de491543f56bd348909b60"},
+    {file = "pyobjc_framework_libdispatch-9.2-cp311-cp311-macosx_10_9_universal2.whl", hash = "sha256:1a67b007113328538b57893cc7829a722270764cdbeae6d5e1460a1d911314df"},
+    {file = "pyobjc_framework_libdispatch-9.2-cp312-cp312-macosx_10_9_universal2.whl", hash = "sha256:6fccea1a57436cf1ac50d9ebc6e3e725bcf77f829ba6b118e62e6ed7866d359d"},
 ]
 
 [[package]]
