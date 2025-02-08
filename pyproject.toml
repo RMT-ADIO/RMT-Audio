@@ -5,7 +5,7 @@ description = "Default template for PDM package"
 authors = [
     {name = "khr0106", email = "kanghr990106@gmail.com"},
 ]
-dependencies = ["pytest>=8.3.4", "pandas>=2.2.3", "bleak>=0.20.2"]
+dependencies = ["pytest>=8.3.4", "pandas>=2.2.3", "bleak>=0.20.2", "psycopg[binary,pool]>=3.2.4", "python-dotenv>=1.0.1", "streamlit>=1.42.0"]
 requires-python = ">=3.10"
 readme = "README.md"
 license = {text = "MIT"}
